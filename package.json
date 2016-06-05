@@ -4,6 +4,9 @@
   "description": "",
   "author": "",
   "devDependencies": {
+    "aurelia-bundler": "^0.4.0",
+    "aurelia-tools": "^0.2.1",
+    "es6-module-loader": "^0.17.11",
     "gulp": "^3.9.1",
     "gulp-bump": "^2.1.0",
     "gulp-changed": "^1.3.0",
