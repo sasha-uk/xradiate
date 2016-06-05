@@ -185,6 +185,8 @@ ClientBin/
 *.publishsettings
 node_modules/
 jspm_packages/
+.idea/
+dist/
 orleans.codegen.cs
 
 # RIA/Silverlight projects
