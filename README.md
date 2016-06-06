@@ -13,7 +13,7 @@ _tbc_
 notes
 -----------
 
-# TeamCity
+TeamCity
 * see CORS support - https://confluence.jetbrains.com/display/TCD9/REST+API
 * internal properties file needed
 * guest authentication needed
