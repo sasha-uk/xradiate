@@ -1,5 +1,5 @@
 //import {computedFrom} from 'aurelia-framework';
 
-export class Welcome {
+export class Config {
   heading = 'config';
 }

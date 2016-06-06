@@ -1,5 +1,19 @@
 <template>
     <section class="au-animate">
         <h2>${heading}</h2>
+        <div class="row au-stagger">
+            <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="build of builds">
+                <div class="build">
+                    <div class="content">
+                        <p>${build.id}</p>
+                        <p>${build.FoofBar_Build}</p>
+                        <p>${build.status}</p>
+                        <p>${build.state}</p>
+                        <p>${build.branchName}</p>
+                        <p>${build.defaultBranch}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
