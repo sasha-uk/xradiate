@@ -1,17 +1,19 @@
 xradiate
 ===========
 
-building
+build
 -----------
 
     install nodejs with npm
     npm install
     typings install
+_tbc_
+
 
 notes
 -----------
 
-###TeamCity
+# TeamCity
 * see CORS support - https://confluence.jetbrains.com/display/TCD9/REST+API
 * internal properties file needed
-* guess authentication needed
+* guest authentication needed
