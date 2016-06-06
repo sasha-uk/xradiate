@@ -15,8 +15,10 @@ System.config({
   },
   map: {
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.2.1",
+    "aurelia-fetch-client": "npm:aurelia-fetch-client@1.0.0-beta.1.2.5",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.2.5",
     "aurelia-loader-default": "npm:aurelia-loader-default@1.0.0-beta.1.2.2",
+    "aurelia-logging-console": "npm:aurelia-logging-console@1.0.0-beta.1.2.2",
     "aurelia-pal-browser": "npm:aurelia-pal-browser@1.0.0-beta.2.0.1",
     "aurelia-polyfills": "npm:aurelia-polyfills@1.0.0-beta.1.1.6",
     "aurelia-router": "npm:aurelia-router@1.0.0-beta.1.2.4",
