@@ -26,7 +26,10 @@ module.exports = function(config) {
       serveFiles: [
         'src/**/*.*',
         'jspm_packages/**/*.js'
-      ]
+      ],
+      preprocessors: {
+        '**/*.js': ['sourcemap']
+      }
     },
     files: [
       'test/unit/setup.ts',
@@ -39,7 +42,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
     singleRun: false
   });
 };

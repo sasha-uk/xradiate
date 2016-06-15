@@ -1,12 +1,32 @@
-import {HttpClient} from 'aurelia-fetch-client';
-import {autoinject} from "aurelia-dependency-injection";
+import {Container, autoinject} from 'aurelia-framework';
+import {HttpClient} from "aurelia-fetch-client";
 
-@autoinject
-describe('TeamCity queries', ()=>{
-   beforeEach(()=>{
+var teamcity = 'https://teamcity.codemotion.co.uk';
 
-   });
-   it('blah',()=> {
-      expect(true).toBe(true);
-   });
+describe('TeamCity queries', ()=> {
+    var http;
+    beforeEach(()=> {
+        http = new HttpClient();
+        http = http.configure(config => {
+            config
+                .useStandardConfiguration()
+                .withBaseUrl(teamcity)
+                .withDefaults({
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+        });
+    });
+
+    it('it can query teamcity projects', done=> {
+        http.fetch('/guestAuth/app/rest/projects')
+            .then(response => {var result = response.json();
+            return result;
+        }).then(projects=>{
+            expect(projects.project).toBeDefined();
+            expect(projects.project.filter(x => x.name === 'Foo').length).toBe(1);
+            done();
+        });
+    });
 });
