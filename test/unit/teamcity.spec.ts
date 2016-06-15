@@ -21,9 +21,10 @@ describe('TeamCity queries', ()=> {
 
     it('it can query teamcity projects', done=> {
         http.fetch('/guestAuth/app/rest/projects')
-            .then(response => {var result = response.json();
-            return result;
-        }).then(projects=>{
+            .then(response => {
+                var result = response.json();
+                return result;
+            }).then(/*projects*/ projects=> {
             expect(projects.project).toBeDefined();
             expect(projects.project.filter(x => x.name === 'Foo').length).toBe(1);
             done();
