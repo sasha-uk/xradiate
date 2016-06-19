@@ -13,8 +13,10 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+
   map: {
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.2.1",
+    "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0-beta.2.1.1",
     "aurelia-fetch-client": "npm:aurelia-fetch-client@1.0.0-beta.1.2.5",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.2.5",
     "aurelia-loader-default": "npm:aurelia-loader-default@1.0.0-beta.1.2.2",
@@ -81,6 +83,10 @@ System.config({
       "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.2.1",
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.2.2"
     },
+    "npm:aurelia-dependency-injection@1.0.0-beta.2.1.1": {
+      "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.2.0.1",
+      "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.2.0.0"
+    },
     "npm:aurelia-event-aggregator@1.0.0-beta.1.2.1": {
       "aurelia-logging": "npm:aurelia-logging@1.0.0-beta.1.2.1"
     },
@@ -113,6 +119,9 @@ System.config({
     },
     "npm:aurelia-metadata@1.0.0-beta.1.2.1": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.2.2"
+    },
+    "npm:aurelia-metadata@1.0.0-beta.2.0.1": {
+      "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.2.0.0"
     },
     "npm:aurelia-pal-browser@1.0.0-beta.2.0.1": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.2.2"

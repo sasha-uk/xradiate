@@ -24,7 +24,7 @@ describe('TeamCity queries', ()=> {
             .then(response => {
                 var result = response.json();
                 return result;
-            }).then(/*projects*/ projects=> {
+            }).then(projects=> {
             expect(projects.project).toBeDefined();
             expect(projects.project.filter(x => x.name === 'Foo').length).toBe(1);
             done();
