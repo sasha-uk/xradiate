@@ -1,5 +1,10 @@
 //import {computedFrom} from 'aurelia-framework';
 
+import {AppConfig} from "./AppConfig";
+import {inject} from "aurelia-dependency-injection";
+import {autoinject} from "aurelia-dependency-injection";
+
+@inject(AppConfig)
 export class Config {
 
     heading = 'config';
@@ -7,23 +12,18 @@ export class Config {
     branchName:string = '';
     buildTypes:string = '';
 
+    constructor(private config: AppConfig) {
+    }
+
     activate() {
-        if (typeof(Storage) != null) {
-            this.teamcityUrl = (localStorage as any).teamcityUrl;
-            this.branchName = (localStorage as any).branchName;
-            this.buildTypes = (localStorage as any).buildTypes;
-        } else {
-            alert('No local storage available!')
-        }
+        this.teamcityUrl = this.config.teamcityUrl;
+        this.branchName = this.config.branchName;
+        this.buildTypes = this.config.buildTypes;
     }
 
     submit() {
-        if (typeof(Storage) != null) {
-            (localStorage as any).teamcityUrl = this.teamcityUrl;
-            (localStorage as any).branchName = this.branchName;
-            (localStorage as any).buildTypes = this.buildTypes;
-        } else {
-            alert('No local storage available!')
-        }
+        this.config.teamcityUrl = this.teamcityUrl;
+        this.config.branchName = this.branchName;
+        this.config.buildTypes = this.buildTypes;
     };
 }

@@ -1,5 +1,6 @@
 import {autoinject} from 'aurelia-framework';
-import {HttpClient} from 'aurelia-fetch-client';
+import {TeamCity} from "./TeamCity";
+import {AppConfig} from "./AppConfig";
 
 
 @autoinject
@@ -7,26 +8,19 @@ export class Home {
     heading = 'home';
     builds = [];
 
-    constructor(private http: HttpClient) {
-        http.configure(config => {
-            config
-                .useStandardConfiguration()
-                .withBaseUrl('https://teamcity.codemotion.co.uk')
-                .withDefaults({
-                    headers: {
-                        'Accept': 'application/json'
-                }});
-        });
+    constructor(private teamcity:TeamCity, private config:AppConfig) {
+        teamcity.configure(config.teamcityUrl);
     }
 
     activate() {
-       this.http.fetch('/guestAuth/app/rest/builds?locator=running:any,branch:branched:any,count:20')
-                .then(response => {
-                    var result = response.json();
-                    return result;
-                })
-                .then(builds => {
-                    this.builds = builds.build;
-                });
+        var builds = [];
+        var promises = [];
+        var types = this.config.getParsedBuildTypes();
+        for (var i = 0; i < types.length; i++) {
+            var promise = this.teamcity.getBuild(types[i], 'master').then(x=>builds.push(x));
+            promises.push(promise)
+        }
+        Promise.all(promises);
+        this.builds = builds;
     }
 }
