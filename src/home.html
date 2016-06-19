@@ -5,12 +5,12 @@
             <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="build of builds">
                 <div class="build">
                     <div class="content">
+                        <p>${build.info.name}</p>
+                        <p>${build.info.projectName}</p>
+                        <p>${build.branchName}</p>
                         <p>${build.id}</p>
-                        <p>${build.FoofBar_Build}</p>
                         <p>${build.status}</p>
                         <p>${build.state}</p>
-                        <p>${build.branchName}</p>
-                        <p>${build.defaultBranch}</p>
                     </div>
                 </div>
             </div>

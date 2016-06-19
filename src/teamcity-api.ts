@@ -46,8 +46,10 @@ var builds =
         "defaultBranch": true,
         "history": true,
         "href": "/guestAuth/app/rest/builds/id:16",
-        "webUrl": "http://localhost:8080/viewLog.html?buildId=16&buildTypeId=FoofBar_Build"
-    }]
+        "webUrl": "http://localhost:8080/viewLog.html?buildId=16&buildTypeId=FoofBar_Build",
+        "info":""
+    }],
+
 };
 
 var buildTypes = {
