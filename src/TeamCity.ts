@@ -31,6 +31,16 @@ export class TeamCity {
         });
     };
 
+    getBuildTypes(){
+        return this.http.fetch('/guestAuth/app/rest/buildTypes')
+            .then(response => {
+                var result = response.json();
+                return result;
+            }).then(buildTyeps=> {
+                return buildTyeps.buildType;
+            });
+    }
+
     getBuild(buildType:string, branch:string)
     {
         var url = `/guestAuth/app/rest/builds/?locator=branch:${branch},buildType:${buildType},count:1`;

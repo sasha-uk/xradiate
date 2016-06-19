@@ -28,9 +28,16 @@ describe('TeamCity service', ()=> {
         });
     });
 
-    it('returns null if branch does not exists', (done)=> {
+    it('returns null build if branch does not exists', (done)=> {
         teamcity.getBuild('FoofBar_Build', 'non-existing-branch').then(build => {
             expect(build).toBeNull();
+            done();
+        });
+    });
+
+    it('gets all build types',(done)=>{
+        teamcity.getBuildTypes().then(p=> {
+            expect(p.length).toBeGreaterThan(0);
             done();
         });
     });

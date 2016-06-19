@@ -49,3 +49,30 @@ var builds =
         "webUrl": "http://localhost:8080/viewLog.html?buildId=16&buildTypeId=FoofBar_Build"
     }]
 };
+
+var buildTypes = {
+    "count": 3,
+    "href": "/guestAuth/app/rest/buildTypes",
+    "buildType": [{
+        "id": "Foo_Build",
+        "name": "Build",
+        "projectName": "Foo",
+        "projectId": "Foo",
+        "href": "/guestAuth/app/rest/buildTypes/id:Foo_Build",
+        "webUrl": "http://localhost:8080/viewType.html?buildTypeId=Foo_Build"
+    }, {
+        "id": "FoofBar_Build",
+        "name": "Build",
+        "projectName": "FooBar",
+        "projectId": "FooBar",
+        "href": "/guestAuth/app/rest/buildTypes/id:FoofBar_Build",
+        "webUrl": "http://localhost:8080/viewType.html?buildTypeId=FoofBar_Build"
+    }, {
+        "id": "FooBar_Test",
+        "name": "Test",
+        "projectName": "FooBar",
+        "projectId": "FooBar",
+        "href": "/guestAuth/app/rest/buildTypes/id:FooBar_Test",
+        "webUrl": "http://localhost:8080/viewType.html?buildTypeId=FooBar_Test"
+    }]
+};

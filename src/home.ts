@@ -7,17 +7,20 @@ import {AppConfig} from "./AppConfig";
 export class Home {
     heading = 'home';
     builds = [];
+    private buildTypes;
+    private buildTypeInfos;
 
     constructor(private teamcity:TeamCity, private config:AppConfig) {
         teamcity.configure(config.teamcityUrl);
+        this.buildTypes = this.config.getParsedBuildTypes();
+        this.buildTypeInfos = this.teamcity.getBuildTypes()
     }
 
     activate() {
         var builds = [];
         var promises = [];
-        var types = this.config.getParsedBuildTypes();
-        for (var i = 0; i < types.length; i++) {
-            var promise = this.teamcity.getBuild(types[i], 'master').then(x=>builds.push(x));
+        for (var i = 0; i < this.buildTypes.length; i++) {
+            var promise = this.teamcity.getBuild(this.buildTypes[i], 'master').then(x=>builds.push(x));
             promises.push(promise)
         }
         Promise.all(promises);
