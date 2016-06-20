@@ -34,3 +34,43 @@ body {
 section {
   margin: 20px;
 }
+
+/*
+
+Cards
+
+*/
+
+.card-container {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  align-content:stretch;
+
+  margin: 0px;
+  padding:10px;
+}
+.card{
+
+  width:200px;
+  background-color: #0f7595;
+  margin: .4rem;
+  border: 1px solid #e5e5e5;
+  border-radius: .25rem;
+  color: #ffffff;
+  padding: 10px;
+}
+.card-success{
+  background-color: #5cb85c;
+  border-color: #5cb85c
+}
+.container-success{
+  background-color: rgba(193,223,158,1);
+}
+.card-danger{
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+.container-danger{
+  background-color: rgba(240,190,189,1);
+}
