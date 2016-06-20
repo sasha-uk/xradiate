@@ -24,7 +24,7 @@ export class Home {
                 var promises = [];
                 for (var i = 0; i < this.buildTypes.length; i++) {
                     var promise = this.teamcity
-                        .getBuild(this.buildTypes[i], 'master')
+                        .getBuild(this.buildTypes[i], this.config.branchName)
                         .then(build=> {
                             // ugly
                             (build as any).info = buildTypeInfos.find(x=>(x as any).id == build.buildTypeId);

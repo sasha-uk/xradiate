@@ -1,19 +1,10 @@
 <template>
-    <section class="au-animate">
-        <h2>${heading}</h2>
-        <div class="row au-stagger">
-            <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="build of builds">
-                <div class="build">
-                    <div class="content">
-                        <p>${build.info.name}</p>
-                        <p>${build.info.projectName}</p>
-                        <p>${build.branchName}</p>
-                        <p>${build.id}</p>
-                        <p>${build.status}</p>
-                        <p>${build.state}</p>
-                    </div>
-                </div>
-            </div>
+    <div class="card-container container-success" >
+        <div class="build card ${build.status==='SUCCESS'?'card-success':''} ${build.status==='FAILURE'?'card-danger':''}" repeat.for="build of builds">
+            <p>${build.info.projectName}</p>
+            <p>${build.info.name}</p>
+            <p>${build.branchName}</p>
+            <p>${build.status}</p>
         </div>
-    </section>
+    </div>
 </template>
