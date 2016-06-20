@@ -8,7 +8,6 @@ export class Home {
     heading = 'home';
     builds = [];
     private buildTypes;
-    private buildTypeInfos:Map<string,any>;
 
     constructor(private teamcity:TeamCity, private config:AppConfig) {
         teamcity.configure(config.teamcityUrl);
@@ -18,25 +17,25 @@ export class Home {
         this.buildTypes = this.config.getParsedBuildTypes();
 
         this.teamcity.getBuildTypes()
-            .then(data=>{
+            .then(data=> {
                 return data;
             })
             .then((buildTypeInfos)=> {
-                var builds = [];
                 var promises = [];
                 for (var i = 0; i < this.buildTypes.length; i++) {
-                    var promise = this.teamcity.getBuild(this.buildTypes[i], 'master')
+                    var promise = this.teamcity
+                        .getBuild(this.buildTypes[i], 'master')
                         .then(build=> {
-                            console.log(buildTypeInfos.find(x=>x.id == build.buildTypeId));
-                            build.info = buildTypeInfos.find(x=>x.id == build.buildTypeId);
-                            builds.push(build)
+                            // ugly
+                            (build as any).info = buildTypeInfos.find(x=>(x as any).id == build.buildTypeId);
+                            return build;
                         });
                     promises.push(promise)
-                };
-                Promise.all(promises).then(()=>
-                {
-                    this.builds = builds;
-                });
+                }
+                return Promise.all(promises);
+            })
+            .then(builds=> {
+                this.builds = builds;
             });
     }
 }
