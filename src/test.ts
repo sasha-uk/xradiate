@@ -5,28 +5,15 @@ import {autoinject} from "aurelia-dependency-injection";
 import {AppConfig} from "./configuration/AppConfig";
 
 @inject(AppConfig)
-export class Config {
-
+export class Test {
     heading = 'test';
-    teamcityUrl:string = '';
-    branchName:string = '';
-    buildTypes:string = '';
-    configJson:string = '';
 
     constructor(private config: AppConfig) {
     }
 
-    activate() {
-        this.teamcityUrl = this.config.teamcityUrl;
-        this.branchName = this.config.branchName;
-        this.buildTypes = this.config.buildTypes;
-        this.configJson = this.config.configJson;
-    }
+    activate(params, navigationInstruction) {
+    };
 
-    submit() {
-        this.config.teamcityUrl = this.teamcityUrl;
-        this.config.branchName = this.branchName;
-        this.config.buildTypes = this.buildTypes;
-        this.config.configJson= this.configJson;
+    deactivate(){
     };
 }

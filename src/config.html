@@ -7,14 +7,9 @@
                 <span class="help-block">Enter the full url including the http/https protocol e.g. https://teamcity.codemotion.co.uk</span>
             </div>
             <div class="form-group">
-                <label for="ln">Branch Name</label>
-                <input type="text" value.bind="branchName" class="form-control" id="ln" placeholder="Branch Name"/>
-                <span class="help-block">Enter the name of the branch to monitor. Only one branch is currently supported e.g. master </span>
-            </div>
-            <div class="form-group">
-                <label for="ln">Build Types</label>
-                <textarea class="form-control" value.bind="buildTypes" rows="6" placeholder="Build Types"></textarea>
-                <span class="help-block">Enter the list of build types to monitor. One build type per row.</span>
+                <label for="lc">Build Types</label>
+                <textarea class="form-control" value.bind="configJson" rows="40" placeholder="Build Types" id="lc"></textarea>
+                <span class="help-block">Enter the json config...</span>
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
