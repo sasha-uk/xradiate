@@ -75,6 +75,7 @@ Cards
 }
 .card-danger{
   background-color: #d9534f;
+  border-color: #a54845
 }
 .container-danger{
   background-color: rgba(240,190,189,1);
