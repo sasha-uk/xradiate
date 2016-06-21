@@ -70,13 +70,14 @@ Cards
   background-color: #5cb85c;
   border-color: #418241
 }
-.container-success{
-  background-color: rgba(193,223,158,1);
-}
 .card-danger{
   background-color: #d9534f;
   border-color: #a54845
 }
-.container-danger{
-  background-color: rgba(240,190,189,1);
+
+.container-success{
+  background-color: rgba(193,223,158,1);
+}
+.container-failure{
+  background-color: #f95959;
 }

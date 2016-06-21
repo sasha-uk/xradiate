@@ -1,0 +1,359 @@
+
+https://TEAM_CITY/httpAuth/app/rest/projects
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<projects count="3" href="/httpAuth/app/rest/projects">
+    <project id="_Root" name="&lt;Root project&gt;" description="Contains all other projects" href="/httpAuth/app/rest/projects/id:_Root" webUrl="http://localhost:8080/project.html?projectId=_Root"/>
+    <project id="Foo" name="Foo" parentProjectId="_Root" href="/httpAuth/app/rest/projects/id:Foo" webUrl="http://localhost:8080/project.html?projectId=Foo"/>
+    <project id="FooBar" name="FooBar" parentProjectId="_Root" description="Github, TeamCity, Azure playground" href="/httpAuth/app/rest/projects/id:FooBar" webUrl="http://localhost:8080/project.html?projectId=FooBar"/>
+</projects>
+
+
+
+https://teamcity.codemotion.co.uk/httpAuth/app/rest/projects/id:Foo
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project id="Foo" name="Foo" parentProjectId="_Root" href="/httpAuth/app/rest/projects/id:Foo" webUrl="http://localhost:8080/project.html?projectId=Foo">
+    <parentProject id="_Root" name="&lt;Root project&gt;" description="Contains all other projects" href="/httpAuth/app/rest/projects/id:_Root" webUrl="http://localhost:8080/project.html?projectId=_Root"/>
+    <buildTypes count="1">
+        <buildType id="Foo_Build" name="Build" projectName="Foo" projectId="Foo" href="/httpAuth/app/rest/buildTypes/id:Foo_Build" webUrl="http://localhost:8080/viewType.html?buildTypeId=Foo_Build"/>
+    </buildTypes>
+    <templates count="0"/>
+    <parameters count="0" href="/app/rest/projects/id:Foo/parameters"/>
+    <vcsRoots count="0" href="/httpAuth/app/rest/vcs-roots?locator=project:(id:Foo)"/>
+    <projects count="0"/>
+</project>
+
+
+https://teamcity.codemotion.co.uk/httpAuth/app/rest/projects/id:FooBar
+{
+    "id": "FooBar",
+    "name": "FooBar",
+    "parentProjectId": "_Root",
+    "description": "Github, TeamCity, Azure playground",
+    "href": "/httpAuth/app/rest/projects/id:FooBar",
+    "webUrl": "http://localhost:8080/project.html?projectId=FooBar",
+    "parentProject": {
+        "id": "_Root",
+        "name": "<Root project>",
+        "description": "Contains all other projects",
+        "href": "/httpAuth/app/rest/projects/id:_Root",
+        "webUrl": "http://localhost:8080/project.html?projectId=_Root"
+    },
+    "buildTypes": {
+        "count": 2,
+        "buildType": [
+            {
+                "id": "FoofBar_Build",
+                "name": "Build",
+                "projectName": "FooBar",
+                "projectId": "FooBar",
+                "href": "/httpAuth/app/rest/buildTypes/id:FoofBar_Build",
+                "webUrl": "http://localhost:8080/viewType.html?buildTypeId=FoofBar_Build"
+            },
+            {
+                "id": "FooBar_Test",
+                "name": "Test",
+                "projectName": "FooBar",
+                "projectId": "FooBar",
+                "href": "/httpAuth/app/rest/buildTypes/id:FooBar_Test",
+                "webUrl": "http://localhost:8080/viewType.html?buildTypeId=FooBar_Test"
+            }
+        ]
+    },
+    "templates": {
+        "count": 0,
+        "buildType": []
+    },
+    "parameters": {
+        "count": 0,
+        "href": "/app/rest/projects/id:FooBar/parameters",
+        "property": []
+    },
+    "vcsRoots": {
+        "count": 1,
+        "href": "/httpAuth/app/rest/vcs-roots?locator=project:(id:FooBar)"
+    },
+    "projects": {
+        "count": 0
+    }
+}
+
+
+https://teamcity.codemotion.co.uk/httpAuth/app/rest/buildTypes/id:FoofBar_Build
+{
+    "id": "FoofBar_Build",
+    "name": "Build",
+    "projectName": "FooBar",
+    "projectId": "FooBar",
+    "href": "/httpAuth/app/rest/buildTypes/id:FoofBar_Build",
+    "webUrl": "http://localhost:8080/viewType.html?buildTypeId=FoofBar_Build",
+    "project": {
+        "id": "FooBar",
+        "name": "FooBar",
+        "parentProjectId": "_Root",
+        "description": "Github, TeamCity, Azure playground",
+        "href": "/httpAuth/app/rest/projects/id:FooBar",
+        "webUrl": "http://localhost:8080/project.html?projectId=FooBar"
+    },
+    "vcs-root-entries": {
+        "count": 1,
+        "vcs-root-entry": [
+            {
+                "id": "FoofBar_SashaUkGithubCom",
+                "vcs-root": {
+                    "id": "FoofBar_SashaUkGithubCom",
+                    "name": "sasha-uk-github.com",
+                    "href": "/httpAuth/app/rest/vcs-roots/id:FoofBar_SashaUkGithubCom"
+                },
+                "checkout-rules": ""
+            }
+        ]
+    },
+    "settings": {
+        "count": 17,
+        "property": [
+            {
+                "name": "allowExternalStatus",
+                "value": "false"
+            },
+            {
+                "name": "allowPersonalBuildTriggering",
+                "value": "true"
+            },
+            {
+                "name": "artifactRules",
+                "value": ""
+            },
+            {
+                "name": "buildNumberCounter",
+                "value": "6"
+            },
+            {
+                "name": "buildNumberPattern",
+                "value": "%build.counter%"
+            },
+            {
+                "name": "checkoutDirectory"
+            },
+            {
+                "name": "checkoutMode",
+                "value": "ON_SERVER"
+            },
+            {
+                "name": "cleanBuild",
+                "value": "false"
+            },
+            {
+                "name": "enableHangingBuildsDetection",
+                "value": "true"
+            },
+            {
+                "name": "executionTimeoutMin",
+                "value": "0"
+            },
+            {
+                "name": "maximumNumberOfBuilds",
+                "value": "0"
+            },
+            {
+                "name": "shouldFailBuildIfTestsFailed",
+                "value": "true"
+            },
+            {
+                "name": "shouldFailBuildOnAnyErrorMessage",
+                "value": "false"
+            },
+            {
+                "name": "shouldFailBuildOnBadExitCode",
+                "value": "true"
+            },
+            {
+                "name": "shouldFailBuildOnOOMEOrCrash",
+                "value": "true"
+            },
+            {
+                "name": "showDependenciesChanges",
+                "value": "false"
+            },
+            {
+                "name": "vcsLabelingBranchFilter",
+                "value": "+:<default>"
+            }
+        ]
+    },
+    "parameters": {
+        "count": 0,
+        "href": "/app/rest/buildTypes/id:FoofBar_Build/parameters",
+        "property": []
+    },
+    "steps": {
+        "count": 1,
+        "step": [
+            {
+                "id": "RUNNER_1",
+                "name": "Compile",
+                "type": "VS.Solution",
+                "properties": {
+                    "count": 8,
+                    "property": [
+                        {
+                            "name": "build-file-path",
+                            "value": "src/FooBar.sln"
+                        },
+                        {
+                            "name": "msbuild.prop.Configuration",
+                            "value": "Release"
+                        },
+                        {
+                            "name": "msbuild_version",
+                            "value": "14.0"
+                        },
+                        {
+                            "name": "run-platform",
+                            "value": "x86"
+                        },
+                        {
+                            "name": "targets",
+                            "value": "Rebuild"
+                        },
+                        {
+                            "name": "teamcity.step.mode",
+                            "value": "default"
+                        },
+                        {
+                            "name": "toolsVersion",
+                            "value": "14.0"
+                        },
+                        {
+                            "name": "vs.version",
+                            "value": "vs2015"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "features": {
+        "count": 0
+    },
+    "triggers": {
+        "count": 1,
+        "trigger": [
+            {
+                "id": "vcsTrigger",
+                "type": "vcsTrigger",
+                "properties": {
+                    "count": 2,
+                    "property": [
+                        {
+                            "name": "branchFilter",
+                            "value": "+:*"
+                        },
+                        {
+                            "name": "quietPeriodMode",
+                            "value": "DO_NOT_USE"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "snapshot-dependencies": {
+        "count": 0
+    },
+    "artifact-dependencies": {
+        "count": 0
+    },
+    "agent-requirements": {
+        "count": 0
+    },
+    "builds": {
+        "href": "/httpAuth/app/rest/buildTypes/id:FoofBar_Build/builds/branch:master"
+    }
+}
+
+https://teamcity.codemotion.co.uk/httpAuth/app/rest/buildTypes/id:FoofBar_Build/builds/branch:master
+{
+    "id": 7,
+    "buildTypeId": "FoofBar_Build",
+    "number": "5",
+    "status": "SUCCESS",
+    "state": "finished",
+    "branchName": "master",
+    "defaultBranch": true,
+    "href": "/httpAuth/app/rest/builds/id:7",
+    "webUrl": "http://localhost:8080/viewLog.html?buildId=7&buildTypeId=FoofBar_Build",
+    "statusText": "Success",
+    "buildType": {
+        "id": "FoofBar_Build",
+        "name": "Build",
+        "projectName": "FooBar",
+        "projectId": "FooBar",
+        "href": "/httpAuth/app/rest/buildTypes/id:FoofBar_Build",
+        "webUrl": "http://localhost:8080/viewType.html?buildTypeId=FoofBar_Build"
+    },
+    "queuedDate": "20160607T222206+0000",
+    "startDate": "20160607T222208+0000",
+    "finishDate": "20160607T222229+0000",
+    "triggered": {
+        "type": "user",
+        "date": "20160607T222206+0000",
+        "user": {
+            "username": "sasha",
+            "id": 1,
+            "href": "/httpAuth/app/rest/users/id:1"
+        }
+    },
+    "lastChanges": {
+        "count": 1,
+        "change": [
+            {
+                "id": 5,
+                "version": "0b9d324fd9aa79f40be6fa18d8f0913ba036f2db",
+                "username": "alexander.papanek",
+                "date": "20160529T124152+0000",
+                "href": "/httpAuth/app/rest/changes/id:5",
+                "webUrl": "http://localhost:8080/viewModification.html?modId=5&personal=false"
+            }
+        ]
+    },
+    "changes": {
+        "href": "/httpAuth/app/rest/changes?locator=build:(id:7)"
+    },
+    "revisions": {
+        "count": 1,
+        "revision": [
+            {
+                "version": "0b9d324fd9aa79f40be6fa18d8f0913ba036f2db",
+                "vcs-root-instance": {
+                    "id": "4",
+                    "vcs-root-id": "FoofBar_SashaUkGithubCom",
+                    "name": "sasha-uk-github.com",
+                    "href": "/httpAuth/app/rest/vcs-root-instances/id:4"
+                }
+            }
+        ]
+    },
+    "agent": {
+        "id": 1,
+        "name": "localhost",
+        "typeId": 1,
+        "href": "/httpAuth/app/rest/agents/id:1"
+    },
+    "artifacts": {
+        "href": "/httpAuth/app/rest/builds/id:7/artifacts/children/"
+    },
+    "relatedIssues": {
+        "href": "/httpAuth/app/rest/builds/id:7/relatedIssues"
+    },
+    "statistics": {
+        "href": "/httpAuth/app/rest/builds/id:7/statistics"
+    }
+}
+
+
+https://teamcity.codemotion.co.uk/httpAuth/app/rest/buildTypes/id:FoofBar_Build/builds/branch:master
+https://teamcity.codemotion.co.uk/httpAuth/app/rest/buildTypes/id:FoofBar_Build/builds/branch:feature-branch
+
+

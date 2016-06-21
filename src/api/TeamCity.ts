@@ -1,6 +1,8 @@
 import {HttpClient} from "aurelia-fetch-client";
 import {autoinject} from "aurelia-framework";
 import {inject} from "aurelia-dependency-injection";
+import {Build} from "./Build";
+
 
 @inject(HttpClient)
 export class TeamCity {
@@ -31,7 +33,7 @@ export class TeamCity {
         });
     };
 
-    getBuildTypes(){
+    getBuildTypes(): Promise<Build[]>{
         return this.http.fetch('/guestAuth/app/rest/buildTypes')
             .then(response => {
                 var result = response.json();
@@ -41,7 +43,7 @@ export class TeamCity {
             });
     }
 
-    getBuild(buildType:string, branch:string)
+    getBuild(buildType:string, branch:string): Promise<Build>
     {
         var url = `/guestAuth/app/rest/builds/?locator=branch:${branch},buildType:${buildType},count:1`;
         return this.http.fetch(url)

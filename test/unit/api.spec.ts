@@ -26,7 +26,7 @@ describe('TeamCity queries', ()=> {
                 return result;
             }).then(projects=> {
             expect(projects.project).toBeDefined();
-            expect(projects.project.filter(x => x.name === 'Foo').length).toBe(1);
+            expect((projects.project as any).filter(x => x.name === 'FooBar').length).toBe(1);
             done();
         });
     });

@@ -1,10 +1,10 @@
 <template>
-    <div class="card-container container-success" >
-        <div class="build card ${build.status==='SUCCESS'?'card-success':''} ${build.status==='FAILURE'?'card-danger':''}" repeat.for="build of builds">
+    <div class="card-container ${group.failing ? 'container-failure':'container-success'}" repeat.for="group of groups">
+        <div class="build card ${build.build.status==='SUCCESS'?'card-success':''} ${build.build.status==='FAILURE'?'card-danger':''}" repeat.for="build of group.builds">
             <p>${build.info.projectName}</p>
             <p>${build.info.name}</p>
-            <p>${build.branchName}</p>
-            <p>${build.status}</p>
+            <p>${build.build.branchName}</p>
+            <p>${build.build.status}</p>
         </div>
     </div>
 </template>

@@ -1,5 +1,5 @@
 import {Container} from "aurelia-dependency-injection";
-import {TeamCity} from "../../src/TeamCity";
+import {TeamCity} from "../../src/api/TeamCity";
 import {HttpClient} from "aurelia-fetch-client";
 import {inject} from "aurelia-dependency-injection";
 let container;

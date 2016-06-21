@@ -4,14 +4,14 @@ import {inject} from "aurelia-dependency-injection";
 import {autoinject} from "aurelia-dependency-injection";
 import {AppConfig} from "./configuration/AppConfig";
 
-
 @inject(AppConfig)
 export class Config {
 
-    heading = 'config';
+    heading = 'test';
     teamcityUrl:string = '';
     branchName:string = '';
     buildTypes:string = '';
+    configJson:string = '';
 
     constructor(private config: AppConfig) {
     }
@@ -20,11 +20,13 @@ export class Config {
         this.teamcityUrl = this.config.teamcityUrl;
         this.branchName = this.config.branchName;
         this.buildTypes = this.config.buildTypes;
+        this.configJson = this.config.configJson;
     }
 
     submit() {
         this.config.teamcityUrl = this.teamcityUrl;
         this.config.branchName = this.branchName;
         this.config.buildTypes = this.buildTypes;
+        this.config.configJson= this.configJson;
     };
 }

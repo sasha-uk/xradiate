@@ -5,7 +5,7 @@
 
 /*
  * https://teamcity.codemotion.co.uk/guestAuth/app/rest/projects
- */
+
 var projects = {
     "count": 3,
     "href": "/guestAuth/app/rest/projects",
@@ -78,3 +78,5 @@ var buildTypes = {
         "webUrl": "http://localhost:8080/viewType.html?buildTypeId=FooBar_Test"
     }]
 };
+ */
+
